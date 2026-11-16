@@ -1,39 +1,16 @@
 import type { Metadata } from "next";
 import "@/app/global.css";
-import { Providers } from "@/components/providers"
-
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "IRXPLAY";
 const SITE_URL  = process.env.NEXT_PUBLIC_SITE_URL  || "https://irxplay.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} - Top Up Game Murah & Instan`,
+    default: `${SITE_NAME} - Transaksi Terakhir`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Top up game online murah, aman, dan proses instan. Mobile Legends, Free Fire, PUBG, Genshin Impact, dan 100+ game lainnya. Bayar via QRIS, transfer bank, dan dompet digital.",
-  keywords: [
-    "top up game", "topup murah", "topup mobile legends", "beli diamond murah",
-    "topup free fire", "topup pubg", "topup genshin impact", "voucher game online",
-  ],
-  openGraph: {
-    type: "website",
-    siteName: SITE_NAME,
-    locale: "id_ID",
-    images: [
-      {
-        url: "/og-default.jpg",
-        width: 1200,
-        height: 630,
-        alt: `${SITE_NAME} - Top Up Game Murah`,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: ["/og-default.jpg"],
-  },
+    "Live Feed transaksi terakhir.",
   robots: {
     index: true,
     follow: true,
@@ -49,9 +26,7 @@ export default function PublicLayout({
   return (
     <html lang="id">
       <body>
-        <Providers>
-          {children}
-        </Providers>
+        {children}
       </body>
     </html>
   )
